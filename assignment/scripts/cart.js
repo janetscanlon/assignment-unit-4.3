@@ -18,7 +18,6 @@ console.log(addItem('onions'), basket);
 console.log(addItem('brie cheese'), basket);
 console.log(addItem('honey'), basket);
 
-
 // checking for the function running and to console log the array with the new item
 
 
@@ -26,24 +25,29 @@ console.log(addItem('honey'), basket);
 
 function listItems(){
     for(let item of basket){        //loop over the items in the basket array *for of loop
-        console.log(item);          //console.log each individual item on a new line
+    console.log(item);             //console.log each individual item on a new line
     }
+    return true;
 }
 
 listItems(); //testing listItems function
 
 
 //3. create a function called empty
-// reset the basket to an empty array 
-//do not use basket = [] to reset the array 
 
 function empty(){
     while( basket.length > 0){
-        basket.pop();
+        basket.pop();               // reset the basket to an empty array do not use basket = [] to reset the array 
     }
+    return basket;
 }
 
-console.log('this is a test for the empty function', empty(), basket);
+
+console.log('this is a test for the empty function', empty(), basket); 
+
+
+
+
 
 // DO NOT MODIFY
 // Used for automated testing
