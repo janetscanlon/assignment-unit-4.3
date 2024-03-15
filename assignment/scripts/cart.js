@@ -5,46 +5,29 @@ console.log('***** Cart Functions *****');
 //1. global variable basket set to an empty array
 
 let basket = [];
-const maxItems = 5 //Stretch goals 1. add a global const named maxItems and set it to 5
+const maxItems = 5  //STRETCH 1. add a global const named maxItems and set it to 5
 
 //2.create a function called isFull
 function isFull(){
-    if(basket.length < maxItems){       //return false if the basket contains less than max number of items 
+    if(basket.length < maxItems){       //STRETCH. return false if the basket contains less than max number of items 
         return false;                   
     }
     else{
-        return true;                    //return true otherwise (equal or more than maxItems)
-    }
-}
-
-
-
-//2.create a function called isFull
-function isFull(){
-    if(basket.length < maxItems){       //return false if the basket contains less than max number of items 
-        return false;                   
-    }
-    else{
-        return true;                    //return true otherwise (equal or more than maxItems)
+        return true;                    //STRETCH. return true otherwise (equal or more than maxItems)
     }
 }
 
 
 //create a function called addItem, parameter for a string item
 function addItem(item){
-    if(isFull() === false){  //stretch 3. update the required addItem function to use the isFull function to prevent more than maxItems from being added to the basket
-    basket.push(item);       //add the new item to the global array basket *basket.push
-        return true;         // return true indicating the item was added 
+    if(isFull() === false){         //STRETCH 3. update the required addItem function to use the isFull function to prevent more than maxItems from being added to the basket
+    basket.push(item);              //add the new item to the global array basket *basket.push
+        return true;                // return true indicating the item was added 
     }
     else{
-        return false;        //if there was no room and the item could not be added return false 
+        return false;               //STRETCH. if there was no room and the item could not be added return false 
     }
 }
-
-    
-
-
-
 
 console.log(addItem('chocolate milk'), basket);
 console.log(addItem('strawberries'), basket);
@@ -77,20 +60,28 @@ function empty(){
 }
 
 console.log('this is a test for the empty function', empty(), basket); 
-
-
-
-
-
 console.log('this is a test for the isFull function', isFull(), basket);
 
-console.log(addItem('kimchi'), basket);
-console.log(addItem('apples'), basket);
-console.log(addItem('milk'), basket);
-console.log(addItem('oranges'), basket);
-console.log(addItem('yogurt'), basket);
 
-console.log('this is a test for the isFull function', isFull(), basket);
+//STRETCH 4. create a function called removeItem
+
+
+    
+    //use Array.indexOf to find the index of the first matching item in the basket
+    //use Array.splice to remove the first matching item from the basket 
+    //return the item removed or null if the item was not found 
+
+
+function removeItem(item){          //take an input parameter for a string item
+    if(basket.indexOf(item)){
+        basket.splice(item);
+        return item;
+    }
+    return null;
+}
+
+console.log('function to test removeItem function', removeItem('Kale'), );
+
 
 
 // DO NOT MODIFY
