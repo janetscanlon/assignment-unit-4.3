@@ -74,13 +74,15 @@ console.log('this is a test for the isFull function', isFull(), basket);
 
 function removeItem(item){          //take an input parameter for a string item
     if(basket.indexOf(item)){
-        basket.splice(item);
+       const i = basket.indexOf(item);
+       basket.splice(i, 1);
         return item;
-    }
+    }else{
     return null;
+    }
 }
 
-console.log('function to test removeItem function', removeItem('Kale'), );
+console.log('this is a test for the removeItem function', removeItem('brie'), basket);
 
 
 
